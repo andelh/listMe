@@ -1,0 +1,100 @@
+body {
+    background-image: url('linedpaper.png');
+    padding-top: 90px;
+}
+
+.logoArea img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 130px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.invalid {
+    text-align: center;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.user {
+    display: inline;
+    font-size: 16px;
+}
+
+#clubList {
+    text-align: center;
+}
+
+#clubList img {
+    height: 120px;
+    width: 130px;
+}
+
+.flyer img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.listingButton {
+    margin-right: 15px;
+}
+
+#eventname {
+    display: inline;
+}
+#identifier {
+    display: inline;
+}
+
+.events {
+    margin-bottom: 30px;
+}
+
+.listView {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#list {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.invis {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.flyer img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 130px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.description {
+    
+}
+
+.navvy {
+    display: inline;
+}
+
+#dropdown {
+    display: inline;
+}
+
+
+
+td {
+    padding-right: 7px;
+}

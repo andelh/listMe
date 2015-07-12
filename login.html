@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="main.css">
+
+    <title>listME || Please Log in</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="logoArea">
+            <img src="img/listME_logo.png"/>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" id="login">
+                            
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Username" id="username" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" id="password" type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div>
+                                <div id="invalid">
+                                    
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>                        
+                        </form>
+                        
+                    </div>
+                    <p style="padding: 10px;">Don't have an account? <a href="signup.html">Create one now!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calling scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="js/handlebars-v2.0.0.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+    <script src="js/login.js"></script>
+    
+    <script>Parse.initialize("KMTj1DRKa0l8sWCm6Iseu3uTXhrGRcghtVt9qGrW", "Ay5JY6SnPR05SUHMNyE4JQC7VoCLci930kmHuoxt");</script>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>

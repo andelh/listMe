@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>listME</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+
+    <!--[if IE]>
+        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <div id="user"></div>
+         
+        </div>
+        </div>
+    </nav>
+        
+    <div class="container">
+        <div class="flyer">
+            <img src="fuego.jpeg">
+        </div>
+        <div class="events">
+            <div id="eventList">
+            
+            </div>
+        </div>
+        
+        <div id="listView">
+            <textarea id="list" cols="30" rows="5"></textarea>
+        </div>
+    </div>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="js/handlebars-v2.0.0.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/fuegoList.js"></script>
+    
+    <script>Parse.initialize("KMTj1DRKa0l8sWCm6Iseu3uTXhrGRcghtVt9qGrW", "Ay5JY6SnPR05SUHMNyE4JQC7VoCLci930kmHuoxt");</script>
+    <script>
+        function logOut(){
+            Parse.User.logOut();
+            window.location.replace('login.html');   
+        }
+    </script>
+        
+    <script type="text/x-handlebars-template" id="single-event-entry">
+        <li class="list-group-item">
+            <span class="badge">{{Count}}</span>
+            {{Event}}
+            <div id="{{objectId}}">{{objectId}}</div>
+            <button type="button" onclick="{{Event}}()" class="btn btn-success pull-right btn-xs listingButton" id="{{Event}}">List Me!</button>
+            
+            <script>
+                
+                function {{Event}}() {
+                    console.log("Working");
+                    var Fuego = Parse.Object.extend("Fuego");
+                    var query = new Parse.Query(Fuego);
+                    
+                    var ID = document.getElementById("{{objectId}}").innerHTML;
+                    var currentUser = Parse.User.current();
+                    var username = currentUser.getUsername();
+                    var fullname = currentUser.get("fullname");
+                    
+                    
+                    console.log(ID);
+                    query.equalTo("objectId", ID);
+                        query.first({
+                          success: function(object) {
+                            
+                            var event = object.get("Event");
+                            var list = object.get("List");
+                            document.getElementById("list").innerHTML = list ;
+                            object.increment("Count");
+                            object.addUnique("List", fullname);
+                            alert("Listed you for " + event + "man" + fullname);
+                            object.save();
+                              
+                            object.fetch({
+                              success: function(object) {
+                                // The object was refreshed successfully.
+                              },
+                              error: function(object, error) {
+                                // The object was not refreshed successfully.
+                                // error is a Parse.Error with an error code and message.
+                              }
+                            });
+
+
+                          },
+                          error: function(error) {
+                            alert("Error: " + error.code + " " + error.message);
+                          }
+                        });
+                    
+                
+                
+                }
+                
+                
+                    
+                    
+            </script>
+        </li>
+    </script>
+        
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

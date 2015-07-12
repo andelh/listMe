@@ -1,0 +1,6 @@
+Login/Signup with personal name and details etc.
+Create layout/design for Main Page
+Create layout/design for Detailed View
+Create Profile Page layout/Design
+Implement Database and interaction for Users and include customs fields such as Full Name
+Implement Database for listing persons
